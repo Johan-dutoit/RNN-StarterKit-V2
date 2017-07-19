@@ -1,0 +1,3 @@
+rootProject.name = 'RNNStarterKitV2'
+
+include ':app'

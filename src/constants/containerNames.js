@@ -1,0 +1,1 @@
+export const WELCOME_SCREEN = 'RNNStarterKitV2.WelcomeScreen';
