@@ -1,6 +1,7 @@
 import Navigation from 'react-native-navigation';
-import * as containerNames from './constants/containerNames';
 
+import store from './store';
+import * as containerNames from './constants/containerNames';
 import { registerContainers } from './containers';
 
 export function start() {
