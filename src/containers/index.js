@@ -6,6 +6,11 @@ import WelcomeScreen from './Welcome';
 
 export function registerContainers(store, Provider) {
     registerContainerWithRedux(containerNames.WELCOME_SCREEN, () => WelcomeScreen, store, Provider)
+
+    // To register a container without redux:
+    // Navigation.registerContainer(containerNames.WELCOME_SCREEN, () => WelcomeScreen);
+    //  OR
+    // registerContainer(containerNames.WELCOME_SCREEN, () => WelcomeScreen)
 }
 
 function registerContainerWithRedux(containerName, generator, store, Provider) {
@@ -23,6 +28,10 @@ function registerContainerWithRedux(containerName, generator, store, Provider) {
         }
     };
 
-    Navigation.registerContainer(containerName, generatorWrapper);
+    registerContainer(containerName, generatorWrapper);
     return generatorWrapper;
+}
+
+function registerContainer(containerName, generator) {
+    Navigation.registerContainer(containerName, generatorWrapper);
 }
