@@ -16,7 +16,7 @@ import thunk from 'redux-thunk';
 function createReduxStore() {
     var store = {};
 
-    if (app.settings.env === 'development') {
+    if (process.env === 'development') {
         store = compose(autoRehydrate())(createStore)(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk)));
     } else {
         store = compose(autoRehydrate())(createStore)(rootReducer, initialState, applyMiddleware(thunk));

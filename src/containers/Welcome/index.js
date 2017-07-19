@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Alert } from 'react-native';
+import { connect } from 'react-redux';
 
 import styles from './styles';
 
@@ -12,11 +13,17 @@ class WelcomeScreen extends Component {
     render() {
         return (
             <View style={styles.root}>
-                <Text style={styles.h1}>React Native Navigation!</Text>
+                <Text style={styles.h1}>{this.props.message}</Text>
                 <Text style={styles.footer}>{`this.props.containerId = ${this.props.containerId}`}</Text>
             </View>
         );
     }
 }
 
-export default WelcomeScreen;
+function mapStateToProps(state, ownProps) {
+    return {
+        message: state.welcomeReducer.message
+    };
+}
+
+export default connect(mapStateToProps)(WelcomeScreen);

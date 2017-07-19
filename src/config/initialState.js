@@ -3,6 +3,6 @@ export default {
 
     // },
     welcomeReducer: {
-
+        message: 'React Native Navigation!'
     }
 };
