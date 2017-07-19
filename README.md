@@ -2,7 +2,10 @@
 A starter kit for [React-Native-Navigation V2](https://github.com/wix/react-native-navigation/tree/v2) and [Redux](https://github.com/reactjs/react-redux)
 
 ## Usage
-Clone the repository locally and rename the projects as needed.
+- Clone the repository locally,
+- Run `npm install` in the root directory
+- (optionally) Rename the project (using guides found online.)
+  -  If you delete the `ios` and `android` folders as suggested by some guides, then you will need to follow the setup instructions found [here](https://github.com/wix/react-native-navigation/tree/v2#installation).
 
 ## Folder structure
 Based off blog posts and personal experience, I prefer keeping a single container with all it's related bits (i.e. reducer, actions, styles, etc.) in the same folder.  
