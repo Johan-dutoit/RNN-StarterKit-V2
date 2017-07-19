@@ -7,7 +7,7 @@ Clone the repository locally and rename the projects as needed.
 ## Folder structure
 Based off blog posts and personal experience, I prefer keeping a single container with all it's related bits (i.e. reducer, actions, styles, etc.) in the same folder.  
 
-This may seem overkil for small projects (and probably is), but the benefits are more visible once your project is large (8+ containers).
+This may seem overkil for small projects (and probably is), but the benefits are more obvious once your project is large (8+ containers).
 
 Feel free to change the structure to suite your needs.
 
