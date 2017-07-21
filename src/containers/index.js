@@ -33,5 +33,5 @@ function registerContainerWithRedux(containerName, generator, store, Provider) {
 }
 
 function registerContainer(containerName, generator) {
-    Navigation.registerContainer(containerName, generatorWrapper);
+    Navigation.registerContainer(containerName, generator);
 }
