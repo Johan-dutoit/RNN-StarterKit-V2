@@ -5,7 +5,7 @@ import { AsyncStorage } from 'react-native'
 import { composeWithDevTools } from 'remote-redux-devtools';
 
 import initialState from './config/initialState';
-// import * as appActions from './actions/AppActions';
+import { storeLoaded } from './config/appReducer';
 
 //  reducers
 import rootReducer from './config/rootReducer';
@@ -33,7 +33,7 @@ function createReduxStore() {
 }
 
 function storeRehydrated() {
-    // store.dispatch(appActions.storeLoaded());
+    store.dispatch(storeLoaded());
 }
 
 let store = createReduxStore();

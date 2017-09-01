@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "react": "16.0.0-alpha.12",
-    "react-native": "0.46.4",
-    "react-native-navigation": "2.0.1934",
+    "react-native": "0.47.2",
+    "react-native-navigation": "alpha",
     "react-redux": "5.0.5",
     "redux": "3.7.2",
     "redux-create-reducer": "1.1.1",

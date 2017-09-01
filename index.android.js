@@ -1,2 +1,2 @@
-import * as app from './src/app';
-app.start();
+import App from './src/app';
+let app = new App();

@@ -1,7 +1,7 @@
 export default {
-    // appReducer: {
-
-    // },
+    appReducer: {
+        storeLoaded: false
+    },
     welcomeReducer: {
         message: 'React Native Navigation!'
     }

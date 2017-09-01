@@ -14,6 +14,7 @@ import java.util.List;
 import com.reactnativenavigation.NavigationApplication;
 
 public class MainApplication extends NavigationApplication {
+
 	@Override
 	public boolean isDebug() {
 		// Make sure you are using BuildConfig from your own application
@@ -26,10 +27,5 @@ public class MainApplication extends NavigationApplication {
 		return Arrays.<ReactPackage>asList(
 			// eg. new VectorIconsPackage()
 		);
-	}
-
-	@Override
-	public List<ReactPackage> createAdditionalReactPackages() {
-		return getPackages();
 	}
 }
