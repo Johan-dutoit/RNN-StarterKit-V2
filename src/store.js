@@ -24,7 +24,7 @@ function createReduxStore() {
 
     var persistConfig = {
         storage: AsyncStorage,
-        whitelist: [],
+        whitelist: ['onboardingReducer'],
     };
 
     persistStore(store, persistConfig, storeRehydrated);

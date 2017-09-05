@@ -7,6 +7,8 @@ import * as containerNames from './constants/containerNames';
 import { registerContainers } from './containers';
 
 export default class App {
+    onboardingStarted = false;
+
     constructor() {
         registerContainers(store, Provider);
 
@@ -16,22 +18,58 @@ export default class App {
     }
 
     onStoreUpdate() {
-        var state = store.getState();
-        var appReducer = state.appReducer;
+        let state = store.getState();
+        let appReducer = state.appReducer;
 
         // Wait for the redux store to load before starting the app
         if (appReducer.storeLoaded) {
-            this.unsubscribe();
             this.startApp(state);
         }
     }
 
     startApp(state) {
         //Do something with state
-        //i.e. determine if the user has logged in or completed onboarding and set a different root
+        //i.e. determine if the user has logged in or has completed onboarding and start a different app
+
+        if (state.onboardingReducer.complete) {
+            //Unsubscribe from store updates, as we no longer want to receive them here
+            this.unsubscribe();
+            this.startDefaultApp();
+        } else if (!this.onboardingStarted) {
+            onboardingStarted = true;
+            this.startOnboardingApp();
+        }
+    }
+
+    startDefaultApp() {
+
+        Navigation.pop
+        Navigation.setRoot({
+            bottomTabs: [
+                {
+                    container: {
+                        name: containerNames.WELCOME_SCREEN,
+                        passProps: {
+                            text: 'This is tab 1',
+                        }
+                    }
+                },
+                {
+                    container: {
+                        name: containerNames.WELCOME_SCREEN,
+                        passProps: {
+                            text: 'This is tab 2'
+                        }
+                    }
+                }
+            ]
+        });
+    }
+
+    startOnboardingApp() {
         Navigation.setRoot({
             container: {
-                name: containerNames.WELCOME_SCREEN
+                name: containerNames.ONBOARDING_SCREEN
             }
         });
     }

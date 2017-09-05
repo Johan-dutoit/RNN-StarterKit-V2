@@ -13,7 +13,7 @@ class WelcomeScreen extends Component {
     render() {
         return (
             <View style={styles.root}>
-                <Text style={styles.h1}>{this.props.message}</Text>
+                <Text style={styles.h1}>{this.props.text}</Text>
                 <Text style={styles.footer}>{`this.props.containerId = ${this.props.containerId}`}</Text>
             </View>
         );
@@ -22,7 +22,6 @@ class WelcomeScreen extends Component {
 
 function mapStateToProps(state, ownProps) {
     return {
-        message: state.welcomeReducer.message
     };
 }
 
