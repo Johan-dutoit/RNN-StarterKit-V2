@@ -21,11 +21,11 @@ public class MainApplication extends NavigationApplication {
 		return BuildConfig.DEBUG;
 	}
 
-	protected List<ReactPackage> getPackages() {
-		// Add additional packages you require here
-		// No need to add RnnPackage and MainReactPackage
+	@Nullable
+	@Override
+	public List<ReactPackage> createAdditionalReactPackages() {
 		return Arrays.<ReactPackage>asList(
 			// eg. new VectorIconsPackage()
 		);
-	}
+ 	}
 }
